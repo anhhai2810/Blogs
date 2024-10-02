@@ -1,0 +1,16 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model BNhChN {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  postId    Int?
+  updatedAt DateTime @updatedAt
+  voteCount Int?
+}
